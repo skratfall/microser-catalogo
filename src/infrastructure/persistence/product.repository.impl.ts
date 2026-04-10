@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Product } from '../domain/entities/product.entity';
-import { IProductRepository } from '../ports/product.repository';
+import { Product } from '../../domain/entities/product.entity';
+import { IProductRepository } from '../../domain/repositories/product.repository';
 import { ProductDocument } from './product.document';
 
 /**

@@ -1,4 +1,4 @@
-import { Product } from '../domain/entities/product.entity';
+import { Product } from '../entities/product.entity';
 
 /**
  * Puerto (Interface) del repositorio de productos

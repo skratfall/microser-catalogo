@@ -2,12 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { Saga, ofType } from '@nestjs/cqrs';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ProductCreatedEvent } from '../application/events/product-created.event';
-import { ProductUpdatedEvent } from '../application/events/product-updated.event';
-import { ProductDeletedEvent } from '../application/events/product-deleted.event';
-import { NotifyInventoryCommand } from '../application/commands/notify-inventory.command';
-import { SyncCatalogCommand } from '../application/commands/sync-catalog.command';
-import { CleanupProductCommand } from '../application/commands/cleanup-product.command';
+import { ProductCreatedEvent } from '../../domain/events/product-created.event';
+import { ProductUpdatedEvent } from '../../domain/events/product-updated.event';
+import { ProductDeletedEvent } from '../../domain/events/product-deleted.event';
+import { NotifyInventoryCommand } from '../commands/notify-inventory.command';
+import { SyncCatalogCommand } from '../commands/sync-catalog.command';
+import { CleanupProductCommand } from '../commands/cleanup-product.command';
 
 @Injectable()
 export class ProductSaga {

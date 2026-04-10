@@ -1,12 +1,12 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { EventBus } from '@nestjs/cqrs';
-import { Product } from '../domain/entities/product.entity';
-import { IProductRepository } from '../ports/product.repository';
-import { CreateProductDto } from './dtos/create-product.dto';
-import { UpdateProductDto } from './dtos/update-product.dto';
-import { ProductCreatedEvent } from './events/product-created.event';
-import { ProductUpdatedEvent } from './events/product-updated.event';
-import { ProductDeletedEvent } from './events/product-deleted.event';
+import { Product } from '../../domain/entities/product.entity';
+import { IProductRepository } from '../../domain/repositories/product.repository';
+import { CreateProductDto } from '../dtos/create-product.dto';
+import { UpdateProductDto } from '../dtos/update-product.dto';
+import { ProductCreatedEvent } from '../../domain/events/product-created.event';
+import { ProductUpdatedEvent } from '../../domain/events/product-updated.event';
+import { ProductDeletedEvent } from '../../domain/events/product-deleted.event';
 
 /**
  * Servicio de aplicación: ProductService
