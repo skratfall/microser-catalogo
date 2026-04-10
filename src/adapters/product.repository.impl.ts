@@ -18,7 +18,7 @@ export class ProductRepositoryImpl implements IProductRepository {
 
   private toDomain(document: ProductDocument): Product {
     return new Product(
-      document.id,
+      document._id.toString(),
       document.name,
       document.price,
       document.description,

@@ -24,8 +24,10 @@ async function bootstrap() {
   await app.startAllMicroservices();
   await app.listen(process.env.PORT ?? 3000);
 
-  console.log(`🚀 Microservicio iniciado en puerto ${process.env.PORT ?? 3000}`);
+  console.log(
+    `🚀 Microservicio iniciado en puerto ${process.env.PORT ?? 3000}`,
+  );
   console.log(`🔌 TCP Microservice escuchando en localhost:8877`);
 }
 
-bootstrap();
+bootstrap().catch(console.error);

@@ -15,8 +15,9 @@ export class ProductSaga {
   productCreated = (events$: Observable<any>): Observable<any> => {
     return events$.pipe(
       ofType(ProductCreatedEvent),
-      map((event: ProductCreatedEvent) =>
-        new NotifyInventoryCommand(event.productId, event.name, event.price),
+      map(
+        (event: ProductCreatedEvent) =>
+          new NotifyInventoryCommand(event.productId, event.name, event.price),
       ),
     );
   };
@@ -25,13 +26,14 @@ export class ProductSaga {
   productUpdated = (events$: Observable<any>): Observable<any> => {
     return events$.pipe(
       ofType(ProductUpdatedEvent),
-      map((event: ProductUpdatedEvent) =>
-        new SyncCatalogCommand(
-          event.productId,
-          event.changes.name,
-          event.changes.price,
-          event.changes.description,
-        ),
+      map(
+        (event: ProductUpdatedEvent) =>
+          new SyncCatalogCommand(
+            event.productId,
+            event.changes.name,
+            event.changes.price,
+            event.changes.description,
+          ),
       ),
     );
   };
@@ -40,8 +42,9 @@ export class ProductSaga {
   productDeleted = (events$: Observable<any>): Observable<any> => {
     return events$.pipe(
       ofType(ProductDeletedEvent),
-      map((event: ProductDeletedEvent) =>
-        new CleanupProductCommand(event.productId),
+      map(
+        (event: ProductDeletedEvent) =>
+          new CleanupProductCommand(event.productId),
       ),
     );
   };

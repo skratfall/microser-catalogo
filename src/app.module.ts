@@ -23,7 +23,9 @@ import { Product } from './domain/entities/product.entity';
 @Module({
   imports: [
     CqrsModule,
-    MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/catalogo'),
+    MongooseModule.forRoot(
+      process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/catalogo',
+    ),
     MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
   ],
   controllers: [ProductController, ProductHandler],
