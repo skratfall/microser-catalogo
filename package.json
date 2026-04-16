@@ -26,6 +26,7 @@
     "@nestjs/microservices": "^11.1.17",
     "@nestjs/mongoose": "^11.0.4",
     "@nestjs/platform-express": "^11.0.1",
+    "mongodb": "^7.1.1",
     "mongoose": "^7.8.9",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
